@@ -19,16 +19,11 @@ jobs:
         if: steps.cache-nodemodules.outputs.cache-hit != 'true'
         run: |
           npm ci --force
-          
-      - name: Install SLF4J Provider
-        run: |
-          wget https://repo1.maven.org/maven2/org/slf4j/logback-classic/1.8.0/logback-classic-1.8.0.jar
-          export CLASSPATH=$CLASSPATH:$(pwd)/logback-classic-1.8.0.jar
 
       - name: OWASP Dependency Check
         run: |
-          wget https://github.com/jeremylong/DependencyCheck/releases/download/v7.2.0/dependency-check-7.2.0-release.zip
-          unzip dependency-check-7.2.0-release.zip
+          wget https://github.com/jeremylong/DependencyCheck/releases/download/v12.1.0/dependency-check-12.1.0-release.zip
+          unzip dependency-check-12.1.0-release.zip
 
       - name: Run scan with ODC
         run: |
