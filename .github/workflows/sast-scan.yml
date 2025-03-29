@@ -22,8 +22,8 @@ jobs:
           
       - name: Install SLF4J Provider
         run: |
-          wget https://repo1.maven.org/maven2/org/slf4j/slf4j-simple/1.7.30/slf4j-simple-1.7.30.jar
-          export CLASSPATH=$CLASSPATH:$(pwd)/slf4j-simple-1.7.30.jar
+          wget wget https://repo1.maven.org/maven2/org/slf4j/logback-classic/1.8.0/logback-classic-1.8.0.jar
+          export CLASSPATH=$CLASSPATH:$(pwd)/logback-classic-1.8.0.jar
 
       - name: OWASP Dependency Check
         run: |
